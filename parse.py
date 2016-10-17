@@ -23,7 +23,7 @@ def parse():
             x = ingredient.split(' ', 2)
             #{name: 'stuff', amount: 1.5, unit:"cups"}
             if len(x) == 3:
-                i['amount'] = x[0]
+                i['amount'] = float(x[0])
                 i['unit'] = x[1]
                 i['name'] = x[2]
 
@@ -34,7 +34,11 @@ def parse():
         recipes.append(d)
 
     # return list of recipes
-    return recipes
+    return sorted(recipes, key=get_sort_key)
+
+
+def get_sort_key(recipe):
+    return recipe['category']
 
 if __name__ == '__main__':
     print parse()

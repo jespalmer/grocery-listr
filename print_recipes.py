@@ -1,15 +1,13 @@
 from parse import parse
 
 
-def print_recipes():
-    recipes = sorted(parse(), key=get_sort_key)
-
+def print_recipes(recipes):
     for idx, recipe in enumerate(recipes):
+        # prints the recipes, doesn't return stuff
         print idx, "\\", recipe["name"], "\\", recipe["category"]
 
 
-def get_sort_key(recipe):
-    return recipe['category']
-
 if __name__ == '__main__':
-    print_recipes()
+    recipes = parse()
+
+    print_recipes(recipes)
