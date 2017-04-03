@@ -2,6 +2,7 @@
 Create a grocery list based off your own personal recipe book or ones you find online.
 
 ## Installation
+Python 2.7
 
 ## Usage
 
