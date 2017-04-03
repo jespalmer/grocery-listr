@@ -1,16 +1,16 @@
 # read txt file
 def parse():
-    with open('recipes.txt', 'r') as f:
+    with open('recipes.txt', 'rU') as f:
         # read recipes in as a string
         lines = f.read()
     # split txt file into recipes
-    s = lines.split('\r\n\r\n\r\n\r\n')
+    s = lines.split('\n\n\n\n')
     # store as a python dictionary with a name, category, website, serving,
     # and ingredients
     recipes = []
     for recipe in s:
         d = {}
-        lines = recipe.split('\r\n')
+        lines = recipe.split('\n')
         d['name'] = lines[0]
         d['link'] = lines[1]
         d['category'] = lines[2]
